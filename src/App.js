@@ -1,19 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux'; // This function is what you can use to access a piece of state.
-
+import { useSelector, useDispatch } from 'react-redux'; // The useSelector function is what you can use to access a piece of state. the useDispatch function allows us to dispatch an action.
+import { increment, decrement } from './actions'
 
 function App() {
 
   const counter = useSelector(state => state.counter)  //simple useSelector example to access state and make it viewable. Here I am pulling the counter part of state.
 
   const isLogged = useSelector(state => state.isLogged) // Here I am pulling the is logged part of state.
+  const dispatch = useDispatch();
 
   return (
     <div className="App">
       <h1>Learning how to break redux up in a more real-world way</h1>
       <p>Counter {counter}</p>
-        <button>+</button>
-        <button>-</button>
+        <button onClick={() => dispatch(increment())}>+</button>
+        <button onClick={() => dispatch(decrement())}>-</button>
 
       {isLogged ? <p>I am logged in so I am able to see this bit of valuable information.</p> : <p>I am not logged in</p>}
       
