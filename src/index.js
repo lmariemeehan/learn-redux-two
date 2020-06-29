@@ -10,7 +10,9 @@ import allReducers from './reducers'; //I do not need to add ./reducers/index be
 const store = createStore(counterReducer, isLoggedReducer);
 */
 
-const store = createStore(allReducers);
+const store = createStore(
+  allReducers, 
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <React.StrictMode>
