@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <h1>Learning how to break redux up in a more real-world way</h1>
       <p>Counter {counter}</p>
-        <button onClick={() => dispatch(increment())}>+</button>
-        <button onClick={() => dispatch(decrement())}>-</button>
+        <button onClick={() => dispatch(increment(10))}>+</button>
+        <button onClick={() => dispatch(decrement(5))}>-</button>
 
       {isLogged ? <p>I am logged in so I am able to see this bit of valuable information.</p> : <p>I am not logged in</p>}
       
